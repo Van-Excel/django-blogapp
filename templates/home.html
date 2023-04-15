@@ -12,6 +12,7 @@
 
     {% block content %}
     <div class="post-entry">
+        {%if user.is_authenticated%}
     
         {% for post in blog_list %} 
 
@@ -19,6 +20,10 @@
         <p>{{post.body}}</p>
 
         {% endfor %}
+
+        
+        {%endif%}
+        <!--How do we get the authentication to apply to all the templates-->
 
     
     </div>
